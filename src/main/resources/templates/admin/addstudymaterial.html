@@ -1,0 +1,65 @@
+<html th:replace="~{admin/adminbase::layout(~{::section})}">
+ <head></head>
+ <body>
+ 	<section>
+ 		<div class="row">
+ 			<div class="col-sm-9 p-5 bg-warning bg-opacity-50 shadow mx-auto">
+ 				<h1 class="text-center text-primary">Add Study Material</h1>
+ 				
+ 			<form method="post" th:object="${dto}" enctype="multipart/form-data">
+ 					<div class="row pt-4">
+ 					<div class="col-sm-6">
+ 						<select th:field="${dto.course}" class="form-control py-2  my-2 bg-white" style="border: 1px solid;">
+								<option value="" class="text-center">---Select Course---</option>
+								<option value="B.Tech.">B.Tech.</option>
+								<option value="M.Tech.">M.Tech.</option>
+								<option value="B.C.A.">B.C.A.</option>
+								<option value="M.C.A.">M.C.A.</option>
+						</select>
+ 					</div>
+ 					<div class="col-sm-6">
+ 						<select th:field="${dto.branch}" class="form-control my-2 py-2 bg-white" style="border: 1px solid;">
+								<option value="" class="text-center">---Select Branch---</option>
+								<option value="CS">Computer Science</option>
+								<option value="IT">Information Technology</option>
+								<option value="CA">Computer Application</option>
+						</select>
+ 					</div>
+ 					<div class="col-sm-6">
+ 						<select th:field="${dto.year}" class="form-control py-2 my-2 bg-white" style="border: 1px solid;">
+								<option value="" class="text-center">---Select Year---</option>
+								<option value="First year">First year</option>
+								<option value="Second year">Second year</option>
+								<option value="Third year">Third year</option>
+								<option value="Final year">Final year</option>
+							</select>
+ 					</div>
+ 					<div class="col-sm-6">
+ 						<input type="text" th:field="${dto.subject}" required placeholder="Enter Subject..." class="form-control  my-2 py-2 bg-white text-dark">
+ 					</div>
+ 					<div class="col-sm-6">
+ 						<input type="text" th:field="${dto.topic}" required placeholder="Enter Topic..." class="form-control  my-2 py-2 bg-white text-dark">
+ 					</div>
+ 					<div class="col-sm-6">
+ 						<select th:field="${dto.materialtype}" class="form-control py-2 my-2 bg-white" style="border: 1px solid;">
+ 							<option value="" class="text-center">---Select Material Type---</option>
+ 							<option value="studymaterial">Study Material</option>
+ 							<option value="assignment">Assignment</option>
+ 						</select>
+ 					</div>
+ 					<div class="col-sm-12">
+ 						<input type="file" th:field="${dto.filename}" class="form-control py-2 my-2 bg-white text-dark" placeholder="upload file..." required>
+ 					</div>
+ 					<div class="col-sm-12 pt-3 text-center">
+ 						<button type="reset" class="btn btn-secondary rounded-0 mx-3 px-3 py-2">Reset</button>
+ 						<button type="submit" class="btn btn-primary rounded-0 mx-3 px-3 py-2">Upload</button>
+ 					</div>
+ 				</div>	
+ 			
+ 			</form>
+ 			
+ 			</div>
+ 		</div>
+ 	</section>
+ </body>
+</html>

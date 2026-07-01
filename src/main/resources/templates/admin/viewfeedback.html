@@ -1,0 +1,41 @@
+<html th:replace="~{admin/adminbase::layout(~{::section})}">
+<head></head>
+<body>
+	<section>
+		<h1 class="text-center text-info">Manage Feedbacks</h1>
+
+		<div class="row">
+			<div class="col-sm-12 mx-auto">
+				<table id="myTable" class="table table-bordered display">
+					<thead class="text-center">
+						<tr>
+							<th class="text-center">Enrollment No.</th>
+							<th class="text-center">Student Name</th>
+							<th class="text-center">Contact No.</th>
+							<th class="text-center">Title</th>
+							<th class="text-center">Message</th>
+							<th class="text-center">Feedback Date</th>
+							<th class="text-center">Delete</th>
+						</tr>
+					</thead>
+					<tbody class="text-center">
+						<tr th:each="f:${flist}">
+							<td th:text="${f.enrollmentno}"></td>
+							<td th:text="${f.name}"></td>
+							<td th:text="${f.contactno}"></td>
+							<td th:text="${f.responsetitle}"></td>
+							<td th:text="${f.responsetext}"></td>
+							<td th:text="${f.resdate}"></td>
+							<td>
+								<a th:href="@{deletefeedback(id=${f.id})}" class="text-decoration-none">
+									<button class="btn btn-danger" onclick="return confirm('Are you sure want to delete?');">Delete</button>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

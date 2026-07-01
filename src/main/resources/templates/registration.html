@@ -1,0 +1,139 @@
+<html th:replace="base::layout(~{::section})">
+	<head>
+		
+	</head>
+	<body>
+		<!-- image section start -->
+		 <section class="contact-img">
+		   <img src="/IMG/R-bg.jpg" alt="">
+		 </section>
+		 <!-- image section End -->
+		<section>
+			<!-- registration page section start -->
+			 <div class="page-wrapper bg-gra-02 mt-2">
+			   <section class="h-100 ">
+			     <div class="container py-5 h-100">
+			       <div class="row d-flex justify-content-center align-items-center h-100">
+			         <div class="col">
+			           <div class="card card-registration my-4">
+			             <div class="row g-0">
+			               <div class="col-xl-6 d-none d-xl-block ">
+			                 <img src="/IMG/reg2.png" alt="Sample photo" class="img-fluid"
+			                   style="border-top-left-radius: 0.25rem; border-bottom-left-radius:0.25rem; margin-top: 180px; height: 75%; width: 100%;" />
+			               </div>
+			               <div class="col-xl-6">
+			                 <div class="card-body p-md-5 text-black">
+			                   <h2 class="mb-5 text-uppercase fw-bold">Student registration form</h2>
+							 
+			                   
+
+			                   <form class="row g-3 contactForm mt-4" th:object="${dto}" method="post">
+			                     <div class="col-md-12">
+			                       <label for="enrollmentno" class="form-label">Enter Enrollment Number</label>
+			                       <input type="text" th:field="${dto.enrollmentno}" class="form-control  custom-placeholder"
+			                         id="enrollmentno" placeholder=" Enrollment Number" required>
+			                     </div>
+			                     <div class="col-md-12">
+			                       <label for="fullName" class="form-label">Enter Name</label>
+			                       <input type="text" th:field="${dto.name}" class="form-control custom-placeholder" id="fullName"
+			                         placeholder="Enter Full Name" required>
+			                     </div>
+			                     <div class="col-md-12">
+			                       <label for="fatherName" class="form-label">Enter Father Name</label>
+			                       <input type="text" th:field="${dto.fname}" class="form-control custom-placeholder"
+			                         id="fatherName" placeholder="Father Name" required>
+			                     </div>
+			                     <div class="col-md-12">
+			                       <label for="motherName" class="form-label">Enter Mother Name</label>
+			                       <input type="text" th:field="${dto.mname}" class="form-control custom-placeholder"
+			                         id="motherName" placeholder="Mother Name" required>
+			                     </div>
+			                     <div class="col-12">
+			                       <label for="gender" class="form-label">Gender</label>
+			                       <select id="gender"  th:field="${dto.gender}" class="form-select custom-select form-control" required>
+			                         <option value="" selected disabled>Select Gender...</option>
+			                         <option value="male">Male</option>
+			                         <option value="female">Female</option>
+			                         <option value="other">Other</option>
+			                       </select>
+
+			                     </div>
+			                     <div class="col-12">
+			                       <label for="inputAddress" class="form-label">Address</label>
+			                       <textarea th:field="${dto.address}" class="form-control custom-placeholder" name="inputAddress"
+			                         id="inputAddress" rows="5" cols="40" placeholder="Enter Your Full Address"
+			                         required></textarea>
+			                       <!-- <input type="text" th:field="${dto.address}" class="form-control custom-placeholder" id="inputAddress"
+			                               placeholder="Full Address" required> -->
+			                     </div>
+			                     <div class="col-12">
+			                       <label for="program" class="form-label">Select Program</label>
+			                       <select id="program" th:field="${dto.program}" class="form-select custom-select form-control"
+			                         required>
+			                         <option value="selectProgram" selected disabled>..Select Program..</option>
+			                         <option value="B.Tech.">B.Tech</option>
+			                         <option value="M.Tech.">M.Tech</option>
+			                         <option value="B.C.A.">B.C.A</option>
+			                         <option value="M.C.A.">M.C.A</option>
+			                       </select>
+
+			                     </div>
+			                     <div class="col-12">
+			                       <label for="branch" class="form-label">Select Branch</label>
+			                       <select id="branch" th:field="${dto.branch}" class="form-select custom-select form-control"
+			                         required>
+			                         <option value="selectBranch" selected disabled>..Select Branch..</option>
+			                         <option value="CS">Computer Science</option>
+			                         <option value="IT">Information Technology</option>
+			                         <option value="ME">Machenical Engineering</option>
+			                         <option value="EE">Electrical Engineering</option>
+			                       </select>
+
+			                     </div>
+
+			                     <div class="col-12">
+			                       <label for="year" class="form-label">Select Year</label>
+			                       <select id="year" th:field="${dto.year}" class="form-select custom-select form-control"
+			                         required>
+			                         <option value="selectYear" selected disabled>..Year..</option>
+			                         <option value="First year">First year</option>
+			                         <option value="Second year">Second year</option>
+			                         <option value="Third year">Third year</option>
+			                         <option value="Final year">Final year</option>
+			                       </select>
+
+			                     </div>
+
+			                     <div class="col-md-6">
+			                       <label for="contactNumber" class="form-label">Contact Number</label>
+			                       <input type="tel" th:field="${dto.contactno}" class="form-control custom-placeholder"
+			                         id="contactNumber" placeholder="Contact Number" required>
+			                     </div>
+			                     <div class="col-md-6">
+			                       <label for="email" class="form-label">Email Email Address</label>
+			                       <input type="email" th:field="${dto.emailaddress}" class="form-control custom-placeholder"
+			                         id="email" placeholder="abc@mail.com" required>
+			                     </div>
+			                     <div class="col-12">
+			                       <label for="password" class="form-label">Enter Password</label>
+			                      <input type="password" th:field="${dto.password}" class="form-control custom-placeholder" placeholder="Enter Your Password" required>
+			                     </div>
+			                     <div class="col-12">
+			                       <button type="submit" class="btn btn-primary mt-3">Register</button>
+			                     </div>
+			                   </form>
+			                 </div>
+			               </div>
+			             </div>
+			           </div>
+			         </div>
+			       </div>
+			     </div>
+			   </section>
+			 
+			 
+			 </div>
+			 <!-- registration page section End -->
+		</section>
+	</body>
+</html>

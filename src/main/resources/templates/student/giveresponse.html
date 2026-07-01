@@ -1,0 +1,54 @@
+<html th:replace="~{student/studentbase::layout(~{::section})}">
+	<head>
+		
+		
+	
+	<body>
+		<section>
+		  <div class="row">
+			 <h1 class="text-center text-primary">Give Response</h1>
+		  </div>	
+		  <div class="row">
+		  		<div class="col-sm-7 mx-auto p-5  bg-opacity-50" style="background-color: #ff0000b9;">
+		  			
+		  			<div th:if="${msg}" class="alert alert-warning alert-dismissible fade show" role="alert">
+			     	   <span th:text="${msg}"></span>
+			     	   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			     	</div>
+			     	
+		  			<form method="post" th:object="${dto}">
+		  				<div class="row">
+		  					<div class="col-sm-6 py-2">
+		  						<label>Select Response Type : </label>
+		  					</div>
+		  					<div class="col-sm-6 py-2">
+		  						<select class="form-control bg-light" th:field="${dto.responsetype}">
+		  							<option value="feedback">Feedback</option>
+		  							<option value="complaint">Complaint</option>
+		  						</select>
+		  					</div>
+		  					
+		  					<div class="col-sm-6 py-2">
+		  						<label>Response Title Text : </label>
+		  					</div>
+		  					<div class="col-sm-6 py-2">
+		  						<input type="text" th:field="${dto.responsetitle}" class="form-control bg-light" placeholder=" Title Text....">
+		  					</div>
+		  					
+		  					<div class="col-sm-6 py-2">
+		  						<label>Response Message Text : </label>
+		  					</div>
+		  					<div class="col-sm-6 py-2">
+		  						<textarea th:field="${dto.responsetext}" class="form-control bg-light" placeholder="Message Text...."></textarea>
+		  					</div>
+		  					
+		  					<div class="col-sm-12 pt-4 text-center">
+		  						<button type="submit" class="btn btn-success mx-auto rounded-0 px-4 py-2">Submit</button>
+		  					</div>
+		  				</div>
+		  			</form>
+		  		</div>
+		  </div>
+		</section>
+	</body>
+</html>

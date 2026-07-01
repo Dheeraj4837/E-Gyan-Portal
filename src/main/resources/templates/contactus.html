@@ -1,0 +1,164 @@
+<html th:replace="base::layout(~{::section})">
+	<head>
+		
+	</head>
+	<body>
+		<section class="contact-img">
+				       <img src="/IMG/c-bg.jpg" alt="">
+				   </section>
+
+		<section>
+			
+			<div th:if="${msg}">
+				<p th:text="${msg}" style="color:green;text-align: center;"></p>
+			</div>
+			
+			<!-- contsct section Start -->
+			   <div class="container mt-5 box" >
+			       
+			       <div class="row " data-aos="fade-right">
+			           
+			           <div class="col-md-4 bg-primary p-5 text-light order-sm-first order-last">
+			               <h2 >We would love to hear from you</h2>
+			               <p>We're open for any suggestion or just to have a chat</p>
+			               <div class="d-flex mt-2">
+			                   <i class="fa-solid fa-location-dot fa-beat bi"></i>
+			                   <p class="mt-3 ms-2">2nd/3rd Floor,Biscomaun Bhawan,Gandhi Maidan,Patna- 800001</p>
+
+			               </div>
+			               <br>
+			               <div class="d-flex mt-2">
+			                   <i class="fa-solid fa-phone fa-shake bi"></i>
+			                   <p class="mt-4 ms-3">0612-2201013, 0612-2206916</p>
+			               </div>
+			               <br>
+			               <div class="d-flex mt-2">
+			                   <i class="fa-solid fa-envelope fa-flip bi"></i>
+			                   <p class="mt-4 ms-3">nou@nou.ac.in</p>
+			               </div>
+			               <br>
+			               <div class="d-flex mt-2">
+			                   <i class="fa-solid fa-fax fa-fade bi"></i>
+			                   <p class="mt-4 ms-3"> 0612-2201001</p>
+			               </div>
+			               <br>
+			           </div>
+			
+			
+					   <div class="col-md-8 p-5 ">
+					                   <h2>Get in touch</h2>
+					                   <form class="row g-3 contactForm mt-4" th:object="${dto}" method="post">
+					                       <div class="col-md-12">
+					                           <label for="fullName" class="form-label">Enter Name</label>
+					                           <input type="text" th:field="${dto.name}" class="form-control  custom-placeholder" id="fullName"
+					                               placeholder="Enter Full Name" required>
+					                       </div>
+					                       <!-- <div class="col-md-6">
+					                           <label for="lastName" class="form-label">Last Name</label>
+					                           <input type="text" class="form-control custom-placeholder" id="lastName" placeholder="Last Name"
+					                               required>
+					                       </div> -->
+					                       <div class="col-12">
+					                           <label for="gender" class="form-label">Gender</label>
+					                           <select id="gender" th:field="${dto.gender}" class="form-select custom-select form-control" required>
+					                               <option value="" selected disabled>...Select Gender...</option>
+					                               <option value="male" >Male</option>
+					                               <option value="female">Female</option>
+					                               <option value="other">Other</option>
+					                           </select>
+
+					                       </div>
+					                       <div class="col-12">
+					                           <label for="inputAddress" class="form-label">Address</label>
+					                           <input type="text" th:field="${dto.address}" class="form-control custom-placeholder" id="inputAddress"
+					                               placeholder="Full Address" required>
+					                       </div>
+					                       <div class="col-md-6">
+					                           <label for="contactNumber" class="form-label">Contact Number</label>
+					                           <input type="tel" th:field="${dto.contactno}" class="form-control custom-placeholder" id="contactNumber"
+					                               placeholder="Contact Number" required>
+					                       </div>
+					                       <div class="col-md-6">
+					                           <label for="email" class="form-label">Email Address</label>
+					                           <input type="email" th:field="${dto.emailaddress}" class="form-control custom-placeholder" id="email"
+					                               placeholder="abc@mail.com" required>
+					                       </div>
+					                       <div class="col-12">
+					                           <label for="enquiry" class="form-label">Enquiry</label>
+					                           <textarea th:field="${dto.enquirytext}" class="form-control custom-placeholder" id="enquiry" rows="3"
+					                               placeholder="Let us know how we can help you today." required></textarea>
+					                       </div>
+					                       <div class="col-12">
+					                           <button type="submit" class="btn btn-primary mt-3">Submit</button>
+					                       </div>
+					                   </form>
+					               </div>
+					           </div>
+					       </div>
+						   
+						   <section id="contact" class="contact pb-0 my-5">
+						          <div class="container aos-init aos-animate" data-aos="fade-up">
+
+						              <div class="section-title">
+						                  <!-- <h2>Contact</h2>
+						              <p>Contact <span>Us</span></p> -->
+						              </div>
+						              <div class="row text-center">
+						                  <div class="col-lg-6 mt-5 mt-lg-0 mb-5 ">
+						                      <div class="image-area" style="background:linear-gradient(rgba(139,0,0,.7),rgba(255,255,255,.3)),url(https://www.static-contents.youth4work.com/university/Documents/Colleges/newsEvent/24e0d4cb-fdd2-4594-973e-b2447848a71a.jpg);background-attachment:cover;
+						          background-repeat:no-repeat;
+						          background-size:100% 100%; height:40vh; padding: 10px;">
+						                          <div class="img-con">
+						                              <div
+						                                  class="container d-flex align-item-center justify-content-center fs-1 text-white flex-column text-center m-auto">
+
+						                                  <h4 style="color: white;" >BEFORE NOU E-Gyan</h4>
+						                                  <h1 style="color: white;">NOU E-Gyan University</h1>
+
+						                                  <p style="color: white;"> March, 1987 by an ordinance, promulgated</p>
+						                              </div>
+
+						                          </div>
+						                      </div>
+						                  </div>
+						                  <div class="col-lg-6 mt-5 mt-lg-0 mb-5">
+						                      <div class="image-area" style="background:linear-gradient(rgba(139,0,0,.7),rgba(255,255,255,.3)),url(https://nouegyan.in/assets/img/u1.jpg);background-attachment:cover;
+						                  background-repeat:no-repeat;
+						                  background-size:100% 100%; height:40vh; padding: 10px;">
+						                          <div class="img-con">
+						                              <div
+						                                  class="container d-flex align-item-center justify-content-center fs-1 text-white flex-column text-center ">
+						                                  <h4 style="color: white;">AFTER NOU E-Gyan</h4>
+						                                  <h1 style="color: white;">NOU E-Gyan University</h1>
+						                                  <p style="color: white;">Nalanda Open University Act, 1995 was passes by the Bihar
+						                                      Legislature</p>
+						                              </div>
+
+						                          </div>
+						                      </div>
+						                  </div>
+						              </div>
+						          </div>
+						      </section>
+
+						      <!-- map section start -->
+						      <section class="py-0">
+						          <div class="container-fluid">
+						              <div class="row">
+
+						                  <div class="col-sm-12 p-0" data-aos="fade-up-right">
+
+						                      <iframe
+						                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.631245571362!2d85.139156215018!3d25.617166983702553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed585a72898067%3A0x332ef319c1947f5e!2sNalanda%20Open%20University!5e0!3m2!1sen!2sin!4v1645340092881!5m2!1sen!2sin"
+						                          width="100%" height="450" style="border:1px dashed red;" allowfullscreen=""
+						                          loading="lazy"></iframe>
+
+						                  </div>
+
+						              </div>
+						          </div>
+						      </section>
+						      <!-- map section End -->
+		</section>
+	</body>
+</html>

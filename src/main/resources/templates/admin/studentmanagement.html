@@ -1,0 +1,40 @@
+<html th:replace="~{admin/adminbase::layout(~{::section})}">
+	<head></head>
+	<body>
+		<section>
+			<h1 class="text-center text-info">MANAGE ALL STUDENTS</h1>
+			<div class="row">
+				<div class="col-sm-12 mx-auto">
+					<table id="myTable" class="table table-bordered display">
+					    <thead class="text-center">
+					        <tr>
+					            <th class="text-center">Enrollment no.</th>
+					            <th class="text-center">Student Name</th>
+								<th class="text-center">contact no.</th>
+								<th class="text-center">Course</th>
+								<th class="text-center">view details</th>
+								<th class="text-center">Delete</th>
+					        </tr>
+					    </thead>
+					    <tbody class="text-center">
+					        <tr  th:each="s:${slist}">
+					            <td th:text="${s.enrollmentno}" class="text-center"></td>
+					            <td th:text="${s.name}"></td>
+								<td th:text="${s.contactno}" class="text-center"></td>
+								<td th:text="${s.program}"></td>
+					            <td>
+									<a href="#">view more</a>
+								</td>
+					            <td>
+									<a th:href="@{deletestudent(enroll=${s.enrollmentno})}">
+										<button class="btn btn-danger rounded-0 " type="button" onclick="return confirm('Are you sure want to delete?')">Delete</button>
+									</a>
+								</td>
+					        </tr>
+					    </tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

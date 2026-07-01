@@ -1,0 +1,405 @@
+ARRAY:
+Array is a collection of similar data types. that means an array can store multiple values of similar datatypes.
+Declaration of array in java:
+datatype [] arrayname = new datatype[size];
+eg:
+int [] arr=new int[10];
+
+Initialization of array:
+int [] arr={10,20,30,40,50};
+
+How to take input from user for an array ?
+ int [] arr =new int[5];
+int i;
+Scanner sc= new Scanner(System.in);
+for(i=0; i<5;i++)
+{
+arr[i] = sc.nextInt();
+}
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+String: technically string is an array of char data type.In java string is a class. The object of string class stores
+ sequence of character.
+
+built in method:of string
+toUpperCase():convert string into uppercase.
+toLowerCase():convert string into lower case.
+length():used to find length of string.
+equals():used to compare two strings for equality.this method returns boolean value.
+equalsIgnoreCase():compare two string for equality ignoring the case sentitvity.
+split():used to split string into substring.This method return array of string.
+replace():used to replace one string with another in given string.
+
+
+-----------------------------------------Method----------------------------------------------------------------------------
+Method: it is a specific block of code used to perform a particular task.
+Types of method:
+Static method: Static method is created by using 'static ' modifier. Static method is also called class method and static method can be called without obj.
+Non Static Method:
+
+
+-----------------------------how to create a method------------------------------------------------------------
+<modifier> <datatype> method_name(parameter)
+{
+//code
+
+}
+
+----------------------------------------------------Recursion---------------------------------------------------------------------------------------------
+
+Recursion:when a function call itself then it is called recursion.
+
+
+-------------------------------------------------------OOPS---------------------------------------------------------------------------------------------------------
+	
+It is a mechanism of software development.OOPS has four pillars:
+1.Abstraction
+2.Encapsulation
+3.Inheritence
+4.Polymorphism
+
+-------------------------------------Abstraction-----------------------
+
+ABSTRACTION is a mechanism to hide internal functionality and show essential functionalities of an object. 
+
+OBJECT is a real world entity which has its properties and functionalities.
+
+-------------------------------------Encapsulation----------------------
+
+ENCAPULATION is a mechanism to wrap properties and functionalities in a unit. this unit is called object.
+
+-------------------------------------Inheritance--------------------------
+
+INHERTENCE you can create new product by using existing product.
+
+-------------------------------------Polymorphism-------------------------
+
+POLYMORPHISM: one thing many form.
+
+
+
+------------------------------------------------CONSTRUCTOR--------------------------------------------------------------------------
+CONSTRUCTOR is a special method used to initialize instance variable. 
+Constructor has following properties :
+1>Constructor name and class name should be same.
+2>Constructor has no return type.
+3>contructor call automaticaaly as soon as obj is created.
+
+
+----------------------------------------------------INHERITENCE-----------------------------------------------------------------------
+INHERITENCE IS A FEATURE OF OOPS
+
+
+
+
+
+
+-----------------------------------------------------TYPES OF INHERITENCE-------------------------------------------------------------
+
+In java programming lang there are following type of inheritence:
+1.SINGLE INHERITENCE
+2.HIERARCHICAL INHERITENCE
+3.MULTI-LEVEL INHERITENCE
+
+------------------------------SINGLE INHERITENCE------------
+
+IN SINGLE inheritence there is a single base  class and single derived class.
+       -----
+      |     |
+      |  A  |  ------>|B|
+       -----
+SYNTAX:
+         class A{
+                   //code 
+                }
+         class B extends A{
+               
+                //CODE
+                }
+
+
+
+
+
+
+------------------------------HIERARCHAL INHERITENCE----------
+
+It contains single base class and multiple derived class.
+
+       class A{
+                   //code VARIABLE AND METHOD
+                }
+       class B extends A{
+               
+                //VARIABLES AND METHOD
+
+                }   
+       class C extends A{
+
+               //variable and method
+             
+               }
+----------------------------MULTI-LEVEL INHERITENCE------------
+
+
+
+
+SYNTAX:     class A{
+                   //code VARIABLE AND METHOD
+                }
+           class B extends A{
+               
+                //VARIABLES AND METHOD
+
+                }   
+           class C extends B{
+
+               //variable and method
+             
+               }
+
+
+---------------------------------------------------------------------------POLYMORPHISM---------------------------------------------------------------------------------
+POLYMORPHISM: the term polymorphism means one thing many form. In java there are two types of polymorphism in java.
+
+1)compile time polymorphism(Method Overloading)
+
+2)Runtime polymorphism(Method overriding)
+
+----------------------------------------------Method Overloading--------------------------------------------------
+
+In java you can create multiple method with same name in same class but there parameter should be Differnt.This is called method overloading.
+the method parameter can be differnet in two types:
+1)no of parameter can be different.
+2)tyes of parameter can be different. 
+
+
+----------------------------------------------Method  Overriding-------------------------------------------------
+
+Rewriting base class method into derived class is called method Overriding.
+
+Example : 
+class Connection{
+      pulic void connect(){
+
+       //code to connect with oracle database
+
+                          }
+                 }
+class NewConnection extends Connection{
+public void connect()
+{
+//code to connect with MySQL
+}
+}
+
+------------------------------------------------------------------------EXCEPTION-----------------------------------------------------------------------------------------------
+
+THE term exception means abnormal termination . When an exception is occured program is terminated abnormally and rest of code is not executed.
+In java there are three types of expection:
+1)checked exception
+2)Unchecked exception
+3)Errors
+
+---------------------------------------------------------Checked Exception--------------------------------------------------------------------
+
+Checked exception are identified by compiler at compilation time.
+e.g---->IOException , FileNotFoundException , ClassNotFoundException etc
+
+----------------------------------------------------------Unchecked Exception-------------------------------------------------------------------
+
+Unchecked eXCEPTION occurs at run time.
+e.g------->NullPointerException , ArithmaticException ,ArrayIndexOutOfBoundsException , InputMismatchException
+
+----------------------------------------------------------Error---------------------------------------------------------------------------------
+
+Error are the type of unchecked exception . Error are occured due to lack of system resources.
+e.g------->AwtError , IOError, etc.
+----------------------------------------------------------------------EXCEPTION HANDLING--------------------------------------------------------------------------------------
+
+IT is a mechanism to handle exception to achieve normal execution of program.
+     For exception handling in java try, catch, finally,throw,throws keywords are used.
+In java exception can be handled using:
+1) By using try and catch blocks.
+2)By using throw and throws.
+
+----------------------------By using TRY AND CATCH BLOCK------------------------------------------------------------------------------------------------------------------- 
+
+try
+{
+
+//code which u want to protect
+
+}
+catch(ExceptionType obj)
+{
+
+//code which is used to handle exception.
+
+}
+finally  //optional
+{
+
+//code which u want to execute finally.
+}
+
+--------------------------------------------------------------------INTERFACE--------------------------------------------------------------=--
+
+INTERFACE is the container of abstract method.Abstract methods are those methods which contain only method declaration and no definition.
+Interface is created by interface keyword followed by interface name.
+
+
+interface interface_name
+{
+
+//abstract method
+
+}
+
+note:Interface in java is used to achieve abstraction.
+
+
+example:
+
+interface MyInterface{
+void m1();//public abstract void m3()
+void m2();
+void m3();
+
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------discussion about INTERFACE , ABSTRACT CLASS AND CLASS--------------------------------------------------------------------
+
+INTERFACE: if you have have requirement but you don't know about its implementation then you can use interface because interface contain abstract method only.
+
+----->An INTERFACE can extend another interface.
+----->An INTERFACE can extend multiple interfaces.
+----->You can't create obj of interface.
+
+ABSTRACT CLASS: Abstract Class is a class which is created using abstract modifier. Abstract class contains abstract method and implemented method both.
+If you have requirement and you know about its implementation but not complete implementation then you can use abstract class.
+
+---->An abstract class can implement interfaces.
+---->An abstract class can extendsanother abstract class .
+---->You can't create obj of abstract class.
+
+CLASS : CLASS is collection of implemented method only. If you have requirement and you know about complete implementation then you can use class.
+
+----> A class can implement interface.
+----> A CLASS can extend abstract class.
+----> A class can extend another class.
+----> You can create obj of class.
+
+-----------------------------------------------------------------------------PACKAGE---------------------------------------------------------------------------------------------
+
+PACKAGE is a container of classes , interface, Abstract classes and sub-packages.
+Package is created using 'package' keyword followed by package name.
+
+e.g. MyUtil.java
+
+package mypack;
+public class MyUtil {
+public int add(int x ,int y){
+return (x+y);}
+public int greatest(int x, int y){
+if (x>y)
+return x;
+else
+ return y;  }
+                   }
+
+
+//compilation method: javac -d . MyUtil.java
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PROGRAMMING LANGUAGE: 
+
+--->It provides raw material for software development.
+--->It provides syntax and semantics for software development.
+---> C , C++ , PYTHON , JAVA ,C# ................ARE SOME POPULAR PROGRAMMING LANG.
+
+---------------------------------------------------------------------------------------
+
+SOFTWARE TECHNOLOGY :
+
+Software technology are non installable software , the software developed by using software technology are installable.
+ JSP, Servlet and JDBC are software technology.
+E.G: JDBC is non-installable but the database driver develped by using JDBC is installable.
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+FRAMEWORK : 
+
+Framework are installable software they provide us pre-designed architecture.
+By using framework u can develop software application more easily within deadline.
+            If u develop software by using software technology then u need to write common code and application specific code both . 
+  And if u develop software by using framework then u need to write application specific code only and framework take care of common code.          
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+FRAMEWORKS IN DIFFERENT TECHNOLOGIES : 
+
+Java : Spring , Spring Boot, Hibernate , JSF(JAVA SERVER FACES) , Struts.
+Python: Django , Flask
+.Net: MVC , Xamrine
+PHP : Laravel , CodeIgniter , CakePHP.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------SPRING BOOT---------------------------------------------------------------------------------------------------
+
+SPRING BOOT is a framework in java which is developed on the top of Spring Framework. Spring boot framework follows MVC(Model-view-controller) architecture.
+
+Model: model is the database part of your applicatin.
+View : view is the presentation part of your application.
+Controller: controller contains bussiness logic of your application.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

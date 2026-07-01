@@ -1,0 +1,44 @@
+<html th:replace="~{admin/adminbase::layout(~{::section})}">
+	<head></head>
+	<body>
+		<section>
+			<h1 style="text-align: center; color: black;"> Enquiry</h1>
+			
+			<div class="row">
+							<div class="col-sm-12 mx-auto">
+								<table id="myTable" class="table table-bordered display">
+								    <thead class="text-center">
+								        <tr>
+								            <th class="text-center">id</th>
+								            <th class="text-center">Student Name</th>
+											<th class="text-center">contact no.</th>
+											<th class="text-center">ENQUIRY</th>
+											
+											<th class="text-center">view details</th>
+											<th class="text-center">Delete</th>
+								        </tr>
+								    </thead>
+								    <tbody class="text-center">
+								        <tr  th:each="e:${elist}">
+								            <td th:text="${e.id}" class="text-center"></td>
+								            <td th:text="${e.name}"></td>
+											<td th:text="${e.contactno}" class="text-center"></td>
+											<td th:text="${e.enquirytext}"></td>
+								            <td>
+												<a href="#">view more</a>
+											</td>
+											<td>
+												<a th:href="@{deleteenquiry(id=${e.id})}" class="text-decoration-none">
+												<button class="btn btn-danger" onclick="return confirm('are you sure want to delete?')">Delete</button>
+												</a>
+											</td>
+								        </tr>
+								    </tbody>
+								</table>
+							</div>
+						</div>
+			
+		</section>
+	</body>
+</html>
+

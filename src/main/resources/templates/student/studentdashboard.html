@@ -1,0 +1,106 @@
+<html th:replace="~{student/studentbase::layout(~{::section})}">
+	<head>
+		<link rel="stylesheet" href="/css/Mainstyle.css">
+	</head>
+	
+	<body>
+		<!-- profeile section start -->
+		 <section style="background-color: #eee;">
+		   <div class="container py-5">
+		       <h1 class="text-center text-danger fw-bold">Student Dashboard</h1>
+		   
+		       <div class="row">
+		           <!-- Profile Section -->
+		           <div class="col-lg-4">
+		               <div class="card mb-4" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+		                   <div class="card-body text-center" th:if="${stdinfo.profilepic}">
+		                       <img th:src="@{'/profile/'+${stdinfo.profilepic}}" alt="avatar"
+		                           class=" img-fluid" style="width: 150px;
+							     border-radius: 30px;">
+		                   </div>
+		                   <div class="card-body text-center" th:unless="${stdinfo.profilepic}">
+		                       <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class=" img-fluid" style="width: 150px; 							
+							  border-radius: 30px;">
+		                   </div>
+		                   <div class="p-3">
+		                       <form method="post" class="px-4" enctype="multipart/form-data" style="display: flex; justify-content: space-around;">
+		                           <input type="file" name="file" class="form-control w-50 mx-1" required="required">
+		                           <button type="submit" class="btn btn-primary w-50 mx-1">Upload Pic</button>
+		                       </form>
+		                   </div>
+		               </div>
+		   
+		               
+		           </div>
+		   
+		           <!-- Student Info Section -->
+		           <div class="col-lg-8">
+		               <div class="card mb-4" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+		                   <div class="card-body">
+		                       <div class="row">
+		                           <div class="col-sm-3 ">
+		                               <p class="mb-0" style="font-size: 23px;
+									 font-weight: 600;
+									 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Full Name</p>
+		                           </div>
+		                           <div class="col-sm-9">
+		                               <p class="text-muted mb-0"style="font-size: 23px;
+											font-weight: 600;
+											 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"  th:text="${stdinfo.name}">John Doe</p>
+		                           </div>
+		                       </div>
+		                       <hr>
+		                       <div class="row">
+		                           <div class="col-sm-3">
+		                               <p class="mb-0" 									style="font-size: 23px;
+																		 font-weight: 600;
+																		 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Enrollment No</p>
+		                           </div>
+		                           <div class="col-sm-9">
+		                               <p class="text-muted mb-0 " 									style="font-size: 23px;
+																		 font-weight: 600;
+																		 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" th:text="${stdinfo.enrollmentno}">123456789</p>
+		                           </div>
+		                       </div>
+		                       <hr>
+		                       <div class="row">
+		                           <div class="col-sm-3">
+		                               <p class="mb-0" 									style="font-size: 23px;
+																		 font-weight: 600;
+																		 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Mobile No</p>
+		                           </div>
+		                           <div class="col-sm-9">
+		                               <p class="text-muted mb-0" 									style="font-size: 23px;
+																		 font-weight: 600;
+																		 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" th:text="${stdinfo.contactno}">+91 9876543210</p>
+		                           </div>
+		                       </div>
+		                       <hr>
+		                       <div class="row">
+		                           <div class="col-sm-3">
+		                               <p class="mb-0" 	style="font-size: 23px;
+											 font-weight: 600;
+											font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Branch</p>
+		                           </div>
+		                           <div class="col-sm-9">
+		                               <p class="text-muted mb-0"style="font-size: 23px;
+											 font-weight: 600;
+											font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"  th:text="${stdinfo.branch}">CSE</p>
+		                           </div>
+		                       </div>
+		                       <hr>
+		                   </div>
+		               </div>
+		               
+		              
+		           </div>
+		       </div>
+		   </div>
+		   
+		 </section>
+		 <!-- profeile section End -->
+		 
+		 
+		 
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<html th:replace="~{student/studentbase::layout(~{::section})}">
+	<head>
+		<title>Student Zone-NOU e-Gyan</title>
+	</head>
+	
+	<body>
+		<section>
+		<h1 class="text-center text-info"> Study Material</h1>
+
+		<div class="row">
+			<div class="col-sm-12 mx-auto">
+				<table id="myTable" class="table table-bordered display">
+					<thead class="text-center">
+						<tr>
+							
+							<th class="text-center">Subject</th>
+							<th class="text-center">Topic</th>
+							<th class="text-center">Material</th>
+							<th class="text-center">Posted Date</th>
+							
+						</tr>
+					</thead>
+					<tbody class="text-center">
+						<tr th:each="m:${smlist}">
+							<td th:text="${m.subject}"></td>
+							<td th:text="${m.topic}"></td>
+							<td>
+							   <a th:href="@{'/mat/'+${m.filename}}" download>
+							   	<span th:text="${m.filename}"></span>
+							   </a>
+							</td>
+							<td th:text="${m.posteddate}"></td>
+						</tr>						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	</body>
+</html>
